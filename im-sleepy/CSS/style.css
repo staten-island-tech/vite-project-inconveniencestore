@@ -1,0 +1,43 @@
+html, body, *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+:root{
+  --primary: #0033ff; 
+
+  --neon-yellow: #ffea00;
+  --bright-pink: #ff00ee;
+  --neon-green: #2bff00; 
+
+  --h1: 8rem;
+  --h2: 7rem;
+  --h3: 6rem;
+  --h4: 5rem;
+}
+
+.pink {
+  --primary: var(--bright-pink);
+}
+
+.green { 
+  --primary: var(--neon-green);
+}
+
+body{
+  background-color: var(--primary);
+}
+
+h1 {
+  font-size: var(--h1);
+  color: var(--neon-yellow);
+}
+h2 {
+  font-size: var(--h2);
+}
+h1, h2, h3, h4, h5 {
+  text-align: center;
+}
+
