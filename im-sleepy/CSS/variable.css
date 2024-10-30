@@ -1,0 +1,24 @@
+:root{
+    --primary: #0033ff; 
+  
+    --neon-yellow: #ffea00;
+    --bright-pink: #ff00ee;
+    --neon-green: #2bff00; 
+  
+    --h1: 8rem;
+    --h2: 7rem;
+    --h3: 6rem;
+    --h4: 5rem;
+  }
+  
+  .pink {
+    --primary: var(--bright-pink);
+  }
+  
+  .green { 
+    --primary: var(--neon-green);
+  }
+
+  .yellow {
+    --primary: var(var(--neon-yellow));
+  }

@@ -1,3 +1,5 @@
+@import "C:\Users\irene.li23\Documents\GitHub\vite-project-inconveniencestore\im-sleepy\CSS\variable.css";
+
 html, body, *{
   margin: 0;
   padding: 0;
@@ -5,25 +7,22 @@ html, body, *{
   font-size: 10px;
 }
 
-:root{
-  --primary: #0033ff; 
+.container{
+  background-color: var(--neon-green);
 
-  --neon-yellow: #ffea00;
-  --bright-pink: #ff00ee;
-  --neon-green: #2bff00; 
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: space-around;
+  flex-grow: 1;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 1rem;
 
-  --h1: 8rem;
-  --h2: 7rem;
-  --h3: 6rem;
-  --h4: 5rem;
-}
-
-.pink {
-  --primary: var(--bright-pink);
-}
-
-.green { 
-  --primary: var(--neon-green);
+  width: 25rem;
+  max-width: 30rem;
+  height: 30rem;
+  margin: 2rem;
 }
 
 body{
@@ -36,6 +35,7 @@ h1 {
 }
 h2 {
   font-size: var(--h2);
+  color: var(--neon-yellow)
 }
 h1, h2, h3, h4, h5 {
   text-align: center;
