@@ -1,4 +1,4 @@
-@import "C:\Users\irene.li23\Documents\GitHub\vite-project-inconveniencestore\im-sleepy\CSS\variable.css";
+@import "./variable.css";
 
 html, body, *{
   margin: 0;
