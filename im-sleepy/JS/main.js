@@ -1,7 +1,17 @@
 import "../CSS/style.css";
 import { store } from "./list.js";
 
-//ok here's the plan
-//we have no plan
+const DOMSelectors = {
+  container: document.querySelector(".main-box"),
+};
 
-store.forEach((object) => console.log(object));
+store.forEach((element) =>
+  DOMSelectors.container.insertAdjacentHTML(
+    "beforeend",
+    `<div class= "container">
+    <h2>${element.object}</h2>
+    <img src="${element.imageUrl}" alt="">
+    <h3>$${element.price}</h3>
+  </div>`
+  )
+);

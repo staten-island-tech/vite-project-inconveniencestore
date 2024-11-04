@@ -1,9 +1,9 @@
 :root{
     --primary: #0033ff; 
   
-    --neon-yellow: #ffea00;
+    --neon-yellow: #f6ff00;
     --bright-pink: #ff00ee;
-    --neon-green: #2bff00; 
+    --neon-green: #66ff00; 
   
     --h1: 8rem;
     --h2: 7rem;
@@ -20,5 +20,5 @@
   }
 
   .yellow {
-    --primary: var(var(--neon-yellow));
+    --primary: var(--neon-yellow);
   }
