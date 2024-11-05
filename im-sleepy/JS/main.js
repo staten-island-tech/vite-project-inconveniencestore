@@ -5,13 +5,14 @@ const DOMSelectors = {
   container: document.querySelector(".main-box"),
 };
 
-store.forEach((element) =>
+store.forEach((store) =>
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
-    `<div class= "container">
-    <h2>${element.object}</h2>
-    <img src="${element.imageUrl}" alt="">
-    <h3>$${element.price}</h3>
+    `  <div class= "container">
+    <h2>${store.object}</h2>
+    <img src="${store.imageUrl}" alt="">
+    <h3>${store.description}</h3>
+    <h3>${store.price}</h3>
   </div>`
   )
 );
