@@ -3,7 +3,7 @@ const store = [
     object: "glass shards",
     price: "1.13",
     description: "probably not edible",
-    imageUrl: "",
+    imageUrl: "/public/OIP.jfif",
   },
   {
     object: "broken egg yolk",
@@ -93,28 +93,34 @@ const store = [
   },
   {
     object: "screwdriver",
-    price: "",
+    price: "23.41",
     description: "but more like circle driver",
     imageUrl: "",
   },
   {
     object: "grocery store coupons",
-    price: "",
+    price: "234.43",
     description: "guaranteed to have been expired yesterday",
     imageUrl: "",
   },
   {
     object: "nuclear launch codes",
-    price: "",
+    price: "1234.3",
     description:
       "OUTDATED. i promise a cat did not run over a keyboard and we just sold these",
     imageUrl: "",
   },
   {
     object: "smart boosters",
-    price: "",
+    price: "85.65",
     description:
       "did not steal this product from another store at all whaaaaaat",
+    imageUrl: "",
+  },
+  {
+    object: "eyes lost to this website",
+    price: "10.01",
+    description: "sorry (not really)",
     imageUrl: "",
   },
 ];

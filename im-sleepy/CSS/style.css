@@ -5,6 +5,7 @@ html, body, *{
   padding: 0;
   box-sizing: border-box;
   font-size: 10px;
+  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
 .main-box {
@@ -16,8 +17,14 @@ html, body, *{
   width: 90%
 }
 
+.card-img {
+  width: 90%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 3rem;
+}
 .container{
-  background-color: var(--neon-green);
+  background-color: var(--backgroundcolor);
 
   display: flex;
   align-items: center;
@@ -28,8 +35,8 @@ html, body, *{
   padding: 3rem;
   border-radius: 1rem;
 
-  width: 25rem;
-  max-width: 30rem;
+  width: 30rem;
+  max-width: 40rem;
   height: 30rem;
   margin: 2rem;
 }
@@ -40,11 +47,15 @@ body{
 
 h1 {
   font-size: var(--h1);
-  color: var(--neon-yellow);
+  color: var(--secondary);
 }
 h2 {
   font-size: var(--h2);
-  color: var(--neon-yellow)
+  color: var(--fourdary);
+}
+h3 {
+  font-size: var(--h3);
+  color: var(--threedary);
 }
 h1, h2, h3, h4, h5 {
   text-align: center;
