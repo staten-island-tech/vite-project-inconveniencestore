@@ -18,13 +18,14 @@ html, body, *{
 }
 
 .card-img {
-  width: 90%;
-  height: 70%;
+  width: 30rem;
+  height: 60 rem;
   object-fit: cover;
   border-radius: 3rem;
+  padding: 2rem;
 }
 .container{
-  background-color: var(--backgroundcolor);
+  background-color: var(--secondary);
 
   display: flex;
   align-items: center;
@@ -37,7 +38,7 @@ html, body, *{
 
   width: 30rem;
   max-width: 40rem;
-  height: 30rem;
+  height: 50rem;
   margin: 2rem;
 }
 
@@ -56,6 +57,10 @@ h2 {
 h3 {
   font-size: var(--h3);
   color: var(--threedary);
+}
+h4{
+  font-size: var(--h4);
+  color: var(--fourdary);
 }
 h1, h2, h3, h4, h5 {
   text-align: center;
