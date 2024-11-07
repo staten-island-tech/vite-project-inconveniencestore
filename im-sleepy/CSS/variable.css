@@ -1,13 +1,13 @@
 :root{
     --primary: #0033ff; 
     --secondary: var(--neon-yellow);
-    --threedary: rgb(11, 85, 146);
-    --fourdary: rgb(245, 0, 0);
+    --threedary: rgb(0, 140, 255);
+    --fourdary: var(--bright-pink);
 
   
-    --neon-yellow:rgb(255, 238, 0);
-    --bright-pink: #ff00ee;
-    --neon-green: #66ff00; 
+    --neon-yellow:#ffee00;
+    --bright-pink: #ff00d0;
+    --neon-green: #55ff00; 
   
     --h1: 8rem;
     --h2: 4rem;
@@ -20,7 +20,7 @@
   .pink {
     --primary: var(--neon-yellow);
     --secondary: var(--bright-pink);
-    --threedary: red;
+    --threedary: ;
     --fourdary: var(--neon-green);
     --backgroundcolor: white;
   }
