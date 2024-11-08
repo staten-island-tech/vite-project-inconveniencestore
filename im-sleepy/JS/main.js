@@ -3,12 +3,28 @@ import { store } from "./list.js";
 
 const DOMSelectors = {
   container: document.querySelector(".main-box"),
+  priceForm: document.getElementById("price-form"),
+  priceValue: document.getElementById("price"),
+  priceOutput: document.getElementById("result"),
 };
 
 //make into fucntion
 
-function createItems(store) {
-  store.forEach((value) =>
+function updatePrice() {
+  const priceLimit = parseFloat(DOMSelectors.priceValue.value); // acquire slider value
+  DOMSelectors.priceOutput.value = priceLimit; // price view update
+  filterPrice(priceLimit); // filter price based on slider value
+}
+
+createItems(store);
+// listen for when price updated
+DOMSelectors.priceValue.addEventListener("input", updatePrice);
+
+form.addEventListener("input", updatePrice);
+
+function createItems(items) {
+  DOMSelectors.container.innerHTML = "";
+  items.forEach((value) =>
     DOMSelectors.container.insertAdjacentHTML(
       "beforeend",
       `  <div class= "container">
@@ -22,8 +38,8 @@ function createItems(store) {
 }
 
 //includes
-function filterItems(store) {
-  let result = store.filter((value) => value.avaliability === "last one");
+function filterItems(sortCategory) {
+  let result = store.filter((value) => value.avaliability === sortCategory);
   createItems(result);
 }
 
@@ -32,7 +48,7 @@ function filterItems(store) {
 //includes
 
 //filter
-function filterPrice(store) {}
-
-//createItems(store);
-filterItems(store);
+function filterPrice(priceLimit) {
+  let result = store.filter((value) => value.price <= priceLimit);
+  createItems(result);
+}

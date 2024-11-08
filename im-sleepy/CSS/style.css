@@ -8,6 +8,10 @@ html, body, *{
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
+input, output {
+  color: aliceblue;
+}
+
 .main-box {
   display: flex;
   margin: 0 auto;
@@ -15,6 +19,21 @@ html, body, *{
   align-items: center;
   justify-content: space-around;
   width: 90%
+}
+
+.control-panel {
+  display: flex;
+  margin: 0 auto;
+  padding: 1rem;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
 }
 
 .card-img {
