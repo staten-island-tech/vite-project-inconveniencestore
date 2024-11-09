@@ -6,22 +6,47 @@ const DOMSelectors = {
   priceForm: document.getElementById("price-form"),
   priceValue: document.getElementById("price"),
   priceOutput: document.getElementById("result"),
+  avaY: document.getElementById("y"),
+  avaN: document.getElementById("n"),
+  avaM: document.getElementById("m"),
+  avaL: document.getElementById("l"),
 };
 
-//make into fucntion
+//initial load up full view
+createItems(store);
+// listen for when ANY type of input is changed, then it runs update price
+// update price will recall all filters, doesn't matter if it didn't change
+//upload final array of cards that fit criteria
 
-function updatePrice() {
-  const priceLimit = parseFloat(DOMSelectors.priceValue.value); // acquire slider value
-  DOMSelectors.priceOutput.value = priceLimit; // price view update
-  filterPrice(priceLimit); // filter price based on slider value
+/* let arr = priceValue,
+  avaY,
+  avaN,
+  avaM,
+  avaL;
+
+arr.forEach (key => {DOMselectors[key].addEventListener("") */
+
+DOMSelectors.priceValue.addEventListener("input", updateCards);
+DOMSelectors.avaY.addEventListener("change", updateCards);
+DOMSelectors.avaN.addEventListener("change", updateCards);
+DOMSelectors.avaM.addEventListener("change", updateCards);
+DOMSelectors.avaL.addEventListener("change", updateCards);
+updateCards();
+
+function updateCards() {
+  const priceLimit = parseFloat(DOMSelectors.priceValue.value);
+  updatePrice(); //visual update
+
+  let filteredItems = filterItems();
+  console.log(filteredItems);
+
+  let criteriaMet = filterPrice(priceLimit, filteredItems); //needs to store into variable
+  //filterItems(sortCategory);
+
+  createItems(criteriaMet);
 }
 
-createItems(store);
-// listen for when price updated
-DOMSelectors.priceValue.addEventListener("input", updatePrice);
-
-form.addEventListener("input", updatePrice);
-
+//card spawner
 function createItems(items) {
   DOMSelectors.container.innerHTML = "";
   items.forEach((value) =>
@@ -32,23 +57,63 @@ function createItems(items) {
       <img src="${value.imageUrl}" class="card-img" alt="">
       <h3>${value.description}</h3>
       <h4>$${value.price}</h4>
+      <h4>${value.avaliability}</h4>
     </div>`
     )
   );
 }
 
-//includes
-function filterItems(sortCategory) {
-  let result = store.filter((value) => value.avaliability === sortCategory);
-  createItems(result);
+//switch to includes for rubirc
+//filters by avaliability
+//returns y, n, m, l depending on what it has
+//console.log(filterItems("IN STOCK"));
+function filterItems() {
+  let avaY = DOMSelectors.avaY.value;
+  let avaN = DOMSelectors.avaN.value;
+  let avaM = DOMSelectors.avaM.value;
+  let avaL = DOMSelectors.avaL.value;
+
+  let avaliability = [];
+
+  if (avaY.checked) {
+    avaliability = avaliability.concat(
+      store.filter((item) => item.avaliability === "IN STOCK")
+    );
+  }
+  if (avaN.checked) {
+    avaliability = avaliability.concat(
+      store.filter((item) => item.avaliability === "OUT OF STOCK")
+    );
+  }
+  if (avaM.checked) {
+    avaliability = avaliability.concat(
+      store.filter((item) => item.avaliability === "maybe in stock, idk")
+    );
+  }
+  if (avaL.checked) {
+    avaliability = avaliability.concat(
+      store.filter((item) => item.avaliability === "LAST ONE!! DON'T MISS OUT")
+    );
+  }
+
+  return avaliability;
 }
 
+//visual ONLY
+function updatePrice() {
+  const priceLimit = parseFloat(DOMSelectors.priceValue.value); // acquire slider value
+  DOMSelectors.priceOutput.value = priceLimit; // price viewer update ok wait why does it need to be =pricelimit huh
+  //filterPrice(priceLimit); // filter price based on slider value
+}
+
+//number
+function filterPrice(priceLimit) {
+  let result = store.filter((value) => value.price <= priceLimit);
+  return result;
+}
+
+//all sorting methods:
 //filter
 //sort
 //includes
-
-//filter
-function filterPrice(priceLimit) {
-  let result = store.filter((value) => value.price <= priceLimit);
-  createItems(result);
-}
+//map

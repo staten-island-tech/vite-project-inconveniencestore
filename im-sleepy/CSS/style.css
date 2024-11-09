@@ -8,6 +8,10 @@ html, body, *{
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
+#price {
+  width: 70rem;
+}
+
 input, output, legend, label {
   color: var(--neon-yellow);
   font-size: 2rem;
