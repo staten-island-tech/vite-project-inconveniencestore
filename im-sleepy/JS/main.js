@@ -18,14 +18,6 @@ createItems(store);
 // update price will recall all filters, doesn't matter if it didn't change
 //upload final array of cards that fit criteria
 
-/* let arr = priceValue,
-  avaY,
-  avaN,
-  avaM,
-  avaL;
-
-arr.forEach (key => {DOMselectors[key].addEventListener("") */
-
 DOMSelectors.priceValue.addEventListener("input", updateCards);
 DOMSelectors.avaY.addEventListener("change", updateCards);
 DOMSelectors.avaN.addEventListener("change", updateCards);
@@ -36,14 +28,26 @@ updateCards();
 function updateCards() {
   const priceLimit = parseFloat(DOMSelectors.priceValue.value);
   updatePrice(); //visual update
+  const filteredItems = filterItems();
 
-  let filteredItems = filterItems();
-  console.log(filteredItems);
+  const newArray = filteredItems.filter((item) => item.price <= priceLimit);
+  /* const newArray = [];
+  for (let i = 0; i < filteredItems.length; i++) {
+    if (filteredItems[i].price <= priceLimit) {
+      newArray.push(filteredItems[i]);
+    }
+  } */
 
-  let criteriaMet = filterPrice(priceLimit, filteredItems); //needs to store into variable
-  //filterItems(sortCategory);
+  newArray.sort(sortAlphabetically);
+  console.log(newArray);
 
-  createItems(criteriaMet);
+  createItems(newArray);
+}
+
+function sortAlphabetically(a, b) {
+  if (a.object[0] > b.object[0]) return 1;
+  if (a.object[0] < b.object[0]) return -1;
+  return 0;
 }
 
 //card spawner
@@ -68,29 +72,29 @@ function createItems(items) {
 //returns y, n, m, l depending on what it has
 //console.log(filterItems("IN STOCK"));
 function filterItems() {
-  let avaY = DOMSelectors.avaY.value;
-  let avaN = DOMSelectors.avaN.value;
-  let avaM = DOMSelectors.avaM.value;
-  let avaL = DOMSelectors.avaL.value;
+  let avaY = DOMSelectors.avaY.checked;
+  let avaN = DOMSelectors.avaN.checked;
+  let avaM = DOMSelectors.avaM.checked;
+  let avaL = DOMSelectors.avaL.checked;
 
   let avaliability = [];
 
-  if (avaY.checked) {
+  if (avaY) {
     avaliability = avaliability.concat(
       store.filter((item) => item.avaliability === "IN STOCK")
     );
   }
-  if (avaN.checked) {
+  if (avaN) {
     avaliability = avaliability.concat(
       store.filter((item) => item.avaliability === "OUT OF STOCK")
     );
   }
-  if (avaM.checked) {
+  if (avaM) {
     avaliability = avaliability.concat(
       store.filter((item) => item.avaliability === "maybe in stock, idk")
     );
   }
-  if (avaL.checked) {
+  if (avaL) {
     avaliability = avaliability.concat(
       store.filter((item) => item.avaliability === "LAST ONE!! DON'T MISS OUT")
     );
@@ -107,10 +111,10 @@ function updatePrice() {
 }
 
 //number
-function filterPrice(priceLimit) {
+/* function filterPrice(priceLimit) {
   let result = store.filter((value) => value.price <= priceLimit);
   return result;
-}
+} */
 
 //all sorting methods:
 //filter

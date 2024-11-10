@@ -44,10 +44,9 @@ input, output, legend, label {
   align-items: center;
 }
 
-
 .card-img {
-  width: 30rem;
-  height: 60 rem;
+  width: 45rem;
+  height: 35rem;
   object-fit: cover;
   border-radius: 3rem;
   padding: 2rem;
@@ -64,9 +63,9 @@ input, output, legend, label {
   padding: 3rem;
   border-radius: 1rem;
 
-  width: 30rem;
-  max-width: 40rem;
-  height: 50rem;
+  width: 40rem;
+  max-width: 50rem;
+  height: 60rem;
   margin: 2rem;
 }
 
