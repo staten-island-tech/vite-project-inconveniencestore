@@ -73,8 +73,7 @@ const store = [
   {
     object: "a singular beanboozled",
     price: 320.0,
-    description:
-      "?????????????????????????????? HUH ???????????????????????????????",
+    description: " HUH ???????????????",
     imageUrl: "beanboozled.png",
     avaliability: "maybe in stock, idk",
   },
@@ -117,7 +116,7 @@ const store = [
     object: "grocery store coupons",
     price: 234.43,
     description: "guaranteed to have been expired yesterday",
-    imageUrl: "",
+    imageUrl: "/coupon.png",
     avaliability: "OUT OF STOCK",
   },
   {
@@ -133,7 +132,7 @@ const store = [
     price: 85.65,
     description:
       "did not steal this product from another store at all whaaaaaat",
-    imageUrl: "",
+    imageUrl: "/smart boosters.png",
     avaliability: "maybe in stock, idk",
   },
   {

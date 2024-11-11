@@ -10,20 +10,30 @@ const DOMSelectors = {
   avaN: document.getElementById("n"),
   avaM: document.getElementById("m"),
   avaL: document.getElementById("l"),
+  eyeDamage: document.getElementById("eye-damage"),
+  light: document.getElementById("light"),
+  dark: document.getElementById("dark"),
+  theme: document.querySelector(".theme"),
+  body: document.body,
+  sortBy: document.getElementById("sort-by"),
 };
 
 //initial load up full view
 createItems(store);
-// listen for when ANY type of input is changed, then it runs update price
-// update price will recall all filters, doesn't matter if it didn't change
-//upload final array of cards that fit criteria
 
 DOMSelectors.priceValue.addEventListener("input", updateCards);
-DOMSelectors.avaY.addEventListener("change", updateCards);
-DOMSelectors.avaN.addEventListener("change", updateCards);
-DOMSelectors.avaM.addEventListener("change", updateCards);
-DOMSelectors.avaL.addEventListener("change", updateCards);
-updateCards();
+
+const theyNeedToListen = [
+  DOMSelectors.avaY,
+  DOMSelectors.avaN,
+  DOMSelectors.avaM,
+  DOMSelectors.avaL,
+  DOMSelectors.sortBy,
+];
+
+theyNeedToListen.forEach((selector) => {
+  selector.addEventListener("change", updateCards);
+});
 
 function updateCards() {
   const priceLimit = parseFloat(DOMSelectors.priceValue.value);
@@ -31,19 +41,41 @@ function updateCards() {
   const filteredItems = filterItems();
 
   const newArray = filteredItems.filter((item) => item.price <= priceLimit);
-  /* const newArray = [];
-  for (let i = 0; i < filteredItems.length; i++) {
-    if (filteredItems[i].price <= priceLimit) {
-      newArray.push(filteredItems[i]);
-    }
-  } */
 
-  newArray.sort(sortAlphabetically);
-  console.log(newArray);
+  const sortedArray = decideHowToSort(newArray);
 
-  createItems(newArray);
+  createItems(sortedArray);
 }
 
+function decideHowToSort(array) {
+  const sortBy = DOMSelectors.sortBy.value;
+  console.log(sortBy);
+
+  if (sortBy === "name-sort") {
+    array.sort(sortAlphabetically);
+  } else if (sortBy === "price-lh") {
+    array.sort((a, b) => a.price - b.price);
+  } else if (sortBy === "price-hl") {
+    array.sort((a, b) => b.price - a.price);
+  }
+
+  return array;
+}
+
+const themeButtons = [
+  DOMSelectors.eyeDamage,
+  DOMSelectors.light,
+  DOMSelectors.dark,
+];
+
+themeButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    DOMSelectors.body.className = button.dataset.theme;
+  });
+});
+
+//search up what this means
 function sortAlphabetically(a, b) {
   if (a.object[0] > b.object[0]) return 1;
   if (a.object[0] < b.object[0]) return -1;
@@ -67,10 +99,6 @@ function createItems(items) {
   );
 }
 
-//switch to includes for rubirc
-//filters by avaliability
-//returns y, n, m, l depending on what it has
-//console.log(filterItems("IN STOCK"));
 function filterItems() {
   let avaY = DOMSelectors.avaY.checked;
   let avaN = DOMSelectors.avaN.checked;
@@ -106,15 +134,8 @@ function filterItems() {
 //visual ONLY
 function updatePrice() {
   const priceLimit = parseFloat(DOMSelectors.priceValue.value); // acquire slider value
-  DOMSelectors.priceOutput.value = priceLimit; // price viewer update ok wait why does it need to be =pricelimit huh
-  //filterPrice(priceLimit); // filter price based on slider value
+  DOMSelectors.priceOutput.value = priceLimit; // price viewer update
 }
-
-//number
-/* function filterPrice(priceLimit) {
-  let result = store.filter((value) => value.price <= priceLimit);
-  return result;
-} */
 
 //all sorting methods:
 //filter

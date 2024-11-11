@@ -9,12 +9,13 @@ html, body, *{
 }
 
 #price {
-  width: 70rem;
+  width: 40rem;
 }
 
 input, output, legend, label {
-  color: var(--neon-yellow);
+  color: var(--secondary);
   font-size: 2rem;
+  
 }
 
 .main-box {
@@ -23,7 +24,13 @@ input, output, legend, label {
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
-  width: 90%
+  width: 150rem; /* :( */
+}
+
+button, select, option {
+  font-size: 2rem;
+  background-color: var(--secondary);
+  margin: .5rem;
 }
 
 .control-panel {
@@ -33,9 +40,15 @@ input, output, legend, label {
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
-  width: 90%;
+  width: 150rem; /* :( */
   
-  background-color: var(--threedary);
+  background-color: var(--fivedary);
+}
+
+.theme {
+  display: flex;
+  flex-flow: column wrap;
+  width: 25rem;
 }
 
 .price-box {
@@ -51,6 +64,7 @@ input, output, legend, label {
   border-radius: 3rem;
   padding: 2rem;
 }
+
 .container{
   background-color: var(--secondary);
 
@@ -65,17 +79,17 @@ input, output, legend, label {
 
   width: 40rem;
   max-width: 50rem;
-  height: 60rem;
+  height: 70rem;
   margin: 2rem;
 }
 
 body{
-  background-color: var(--primary);
+  background-color: var(--threedary);
 }
 
 h1 {
   font-size: var(--h1);
-  color: var(--secondary);
+  color: var(--primary);
 }
 h2 {
   font-size: var(--h2);
@@ -83,7 +97,7 @@ h2 {
 }
 h3 {
   font-size: var(--h3);
-  color: var(--threedary);
+  color: var(--fivedary);
 }
 h4{
   font-size: var(--h4);
@@ -93,3 +107,32 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
+@media screen and (max-width: 120rem) { 
+  .main-box, .control-panel {
+    width: 150rem;
+  }
+}
+
+@media screen and (max-width: 100rem) { 
+  .main-box, .control-panel {
+    width: 90rem;
+  }
+  .container {
+    width: 40rem;
+  }
+  .card-img {
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 60rem) { 
+  .main-box, .control-panel {
+    width: 50rem;
+  }
+  .container {
+    width: 25rem;
+  }
+  .card-img {
+    width: 40rem;
+  }
+}

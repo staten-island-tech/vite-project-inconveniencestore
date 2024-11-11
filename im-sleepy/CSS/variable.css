@@ -1,34 +1,31 @@
 :root{
-    --primary: #0033ff; 
-    --secondary: var(--neon-yellow);
-    --threedary: rgb(0, 140, 255);
-    --fourdary: var(--bright-pink);
+   --primary: rgb(0, 0, 0);
+   --secondary: rgb(0, 255, 255);
+    --threedary: rgb(200, 255, 0);
+    --fourdary: #4A4A4A;
+    --fivedary: rgb(47, 0, 255);
 
-  
-    --neon-yellow:#ffee00;
-    --bright-pink: #ff00d0;
-    --neon-green: #55ff00; 
+
+    /* --neon-yellow:#ffee00; */
   
     --h1: 8rem;
     --h2: 4rem;
-    --h3: 2rem;
+    --h3: 2.5rem;
     --h4: 1.5rem;
   }
-
   
-  
-  .pink {
-    --primary: var(--neon-yellow);
-    --secondary: var(--bright-pink);
-    --threedary: ;
-    --fourdary: var(--neon-green);
-    --backgroundcolor: white;
-  }
-  
-  .green { 
-    --primary: var(--neon-green);
+  .light { 
+    --primary: rgb(0, 0, 0);
+   --secondary: rgb(170, 170, 170);
+    --threedary: rgb(255, 255, 255);
+    --fourdary: #1A1A1A;
+    --fivedary: rgb(0, 0, 0);
   }
 
-  .yellow {
-    --primary: var(--neon-yellow);
+  .dark {
+    --primary: rgb(105, 105, 105);
+   --secondary: rgb(201, 201, 201);
+    --threedary: rgb(0, 0, 0);
+    --fourdary: #4A4A4A;
+    --fivedary: rgb(26, 25, 25);
   }
