@@ -20,6 +20,7 @@ const DOMSelectors = {
 
 //initial load up full view
 createItems(store);
+updateCardsCards();
 
 DOMSelectors.priceValue.addEventListener("input", updateCards);
 
