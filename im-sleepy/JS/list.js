@@ -5,6 +5,7 @@ const store = [
     description: "probably not edible",
     imageUrl: "/glassshards.png",
     avaliability: "LAST ONE!! DON'T MISS OUT",
+    altText: "glass shards",
   },
   {
     object: "feesh",
@@ -12,6 +13,7 @@ const store = [
     description: "one singular feesh",
     imageUrl: "/feesh.png",
     avaliability: "OUT OF STOCK",
+    altText: "fish",
   },
   {
     object: "19 6 pc mcnuggets boxes",
@@ -19,6 +21,7 @@ const store = [
     description: "the edible has been eaten so not edible",
     imageUrl: "/MCNUGGIES.png",
     avaliability: "IN STOCK",
+    altText: "19 chicken nugget boxes with x's over the chicken nuggets",
   },
   {
     object: "micro kitten",
@@ -26,6 +29,7 @@ const store = [
     description: "not even worth a cent or the size of a cent",
     imageUrl: "/microkitten.png",
     avaliability: "maybe in stock, idk",
+    altText: "a kitten is shown next to a penny",
   },
   {
     object: "the pen you lost 234 days ago",
@@ -33,6 +37,7 @@ const store = [
     description: "it's also missing the spring, you have it though",
     imageUrl: "/pen.png",
     avaliability: "OUT OF STOCK",
+    altText: "a grey line, meant to represent a pen",
   },
   {
     object: "the screams of the tortured",
@@ -40,6 +45,7 @@ const store = [
     description: "aka tech students' cries, neatly packed in pandora's box",
     imageUrl: "SCREAMS.png",
     avaliability: "IN STOCK",
+    altText: "red text displaying A's all over the page",
   },
   {
     object: "assorted trinkets",
@@ -47,6 +53,7 @@ const store = [
     description: "selling this poor crow's home because he forgot to pay rent",
     imageUrl: "/trinkets.png",
     avaliability: "IN STOCK",
+    altText: "assortment of colorful lines and sparkles",
   },
   {
     object: "used batteries",
@@ -54,6 +61,7 @@ const store = [
     description: "no power guaranteed",
     imageUrl: "/batteries.png",
     avaliability: "LAST ONE!! DON'T MISS OUT",
+    altText: "battery exploded",
   },
   {
     object: "playing card set",
@@ -62,6 +70,7 @@ const store = [
       "but one of the cards is missing but its a different card every time you check",
     imageUrl: "/cards.png",
     avaliability: "OUT OF STOCK",
+    altText: "showing 5 Aces in card stack",
   },
   {
     object: "live ww1 stick grenade",
@@ -69,6 +78,8 @@ const store = [
     description: "the real thing!",
     imageUrl: "stickgrenade.png",
     avaliability: "IN STOCK",
+    altText:
+      "image with text saying 'i'm going to be real idk what a stick grenade is i didnt even know that they existed until someone told me'",
   },
   {
     object: "a singular beanboozled",
@@ -76,6 +87,7 @@ const store = [
     description: " HUH ???????????????",
     imageUrl: "beanboozled.png",
     avaliability: "maybe in stock, idk",
+    altText: "confused cat",
   },
   {
     object: "watermelon rind",
@@ -83,6 +95,7 @@ const store = [
     description: "it's intact.",
     imageUrl: "/rind.png",
     avaliability: "maybe in stock, idk",
+    altText: "green, slightly bent line",
   },
   {
     object: "glass of water",
@@ -90,6 +103,7 @@ const store = [
     description: "stolen from a painter",
     imageUrl: "/water.png",
     avaliability: "OUT OF STOCK",
+    altText: "glass of paint water",
   },
   {
     object: "chip bag",
@@ -97,6 +111,7 @@ const store = [
     description: "99.99% air, that 0.01 is a mystery",
     imageUrl: "/chip bag.png",
     avaliability: "IN STOCK",
+    altText: "'it's literally all air'",
   },
   {
     object: "chapstick",
@@ -104,6 +119,7 @@ const store = [
     description: "for people who won't shut up",
     imageUrl: "/chaptick.png",
     avaliability: "LAST ONE!! DON'T MISS OUT",
+    altText: "gluestick labeled as chapstick",
   },
   {
     object: "screwdriver",
@@ -111,6 +127,7 @@ const store = [
     description: "but more like circle driver",
     imageUrl: "/screwdriver.png",
     avaliability: "OUT OF STOCK",
+    altText: "screwdriver, with end edited to just be a circle",
   },
   {
     object: "grocery store coupons",
@@ -118,6 +135,7 @@ const store = [
     description: "guaranteed to have been expired yesterday",
     imageUrl: "/coupon.png",
     avaliability: "OUT OF STOCK",
+    altText: "coupon for 200% off that expired yesterday",
   },
   {
     object: "nuclear launch codes",
@@ -126,6 +144,7 @@ const store = [
       "OUTDATED. i promise a cat did not run over a keyboard and we just sold these",
     imageUrl: "/LAUNCH CODE.png",
     avaliability: "IN STOCK",
+    altText: "3 blurred codes for nuclear launch codes",
   },
   {
     object: "smart boosters",
@@ -134,6 +153,8 @@ const store = [
       "did not steal this product from another store at all whaaaaaat",
     imageUrl: "/smart boosters.png",
     avaliability: "maybe in stock, idk",
+    altText:
+      "someone asking for image of smart boosters, getting response that they are actually cyanide pills",
   },
   {
     object: "eyes lost to this website",
@@ -141,6 +162,7 @@ const store = [
     description: "sorry (not really)",
     imageUrl: "/eyes.png",
     avaliability: "OUT OF STOCK",
+    altText: "eyeballs, crying",
   },
 ];
 

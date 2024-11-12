@@ -91,7 +91,7 @@ function createItems(items) {
       "beforeend",
       `  <div class= "container">
       <h2>${value.object}</h2>
-      <img src="${value.imageUrl}" class="card-img" alt="">
+      <img src="${value.imageUrl}" class="card-img" alt="${value.altText}">
       <h3>${value.description}</h3>
       <h4>$${value.price}</h4>
       <h4>${value.avaliability}</h4>
