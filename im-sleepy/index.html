@@ -7,9 +7,11 @@
     <title>let me rest X_X</title>
   </head>
   <body class=""> 
-    <!-- change class name here using js -->
-    <h1>INCONVENIENCE STORE</h1>
-    <div class="control-panel">
+
+    <header><!-- change class name here using js -->
+      <h1>INCONVENIENCE STORE</h1>
+    </header>
+    <main>    <div class="control-panel">
 
       <!-- item one -->
       <div class="price-box">
@@ -58,7 +60,7 @@
        <!-- item four -->
      <div class="sort-by-box">
       <legend>sort by:</legend>
-      <select name="" id="sort-by">
+      <select name="" id="sort-by" aria-label="sort-by">
         <option value="name-sort">name</option>
         <option value="price-hl">price: high to low</option>
         <option value="price-lh">price: low to high</option>
@@ -67,14 +69,15 @@
     </div>
 
     
-<div class="main-box">
-  <!-- <div class= "container">
-    <h2>${store.object}</h2>
-    <img src=${store.imageUrl} class="card-img" alt="">
-    <h3>${store.description}</h3>
-    <h4>${store.price}</h4>
-  </div> -->
-</div>
+    <div class="main-box">
+      <!-- <div class= "container">
+        <h2>${store.object}</h2>
+        <img src=${store.imageUrl} class="card-img" alt="">
+        <h3>${store.description}</h3>
+        <h4>${store.price}</h4>
+      </div> -->
+    </div></main>
+
     <script type="module" src="JS/main.js"></script>
   </body>
 </html>
